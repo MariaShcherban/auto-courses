@@ -27,12 +27,12 @@ namespace ProjectOne
                     }
                     else
                     {
-                        Console.WriteLine($"The dimension input is not a number");
+                        Console.WriteLine($"The third dimension is not a number");
                     }
                 }
                 else
                 {
-                    Console.WriteLine($"The dimension input is not a number");
+                    Console.WriteLine($"The second dimension is not a number");
                 }
             }
             else
