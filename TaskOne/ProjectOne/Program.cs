@@ -18,11 +18,26 @@ namespace ProjectOne
                         result = (x + y) * (Math.Pow(z, 2) + 1);
                         Console.WriteLine($"First expression result is: {result}");
 
-                        result = (x % z - 1) * Math.Sqrt(y);
-                        Console.WriteLine($"Second expression result is: {result}");
+                        if (y > 0)
+                        {
+                            result = (x % z - 1) * Math.Sqrt(y);
+                            Console.WriteLine($"Second expression result is: {result}");
+                        }
+                        else
+                        {
+                            Console.WriteLine("y must be > 0 to evaluate the second expression");
+                        }
 
-                        result = (x*y + y*z) / Math.Pow(z, 3);
-                        Console.WriteLine($"Third expression result is: {result}");
+                        if (z > 0)
+                        {
+                            result = (x * y + y * z) / Math.Pow(z, 3);
+                            Console.WriteLine($"Third expression result is: {result}");
+                        }
+                        else
+                        {
+                            Console.WriteLine("z must be > 0 to evaluate the third expression");
+                        }
+
                     }
                     else
                     {
