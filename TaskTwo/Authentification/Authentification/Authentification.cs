@@ -2,7 +2,7 @@
 
 namespace Authentification
 {
-    class Program
+    class Authentification
     {
         private const string userName = "admin";
         private const string password = "a";
@@ -18,7 +18,7 @@ namespace Authentification
 
         public static void Main(string[] args)
         {
-            Program p = new Program();
+            Authentification authentification = new Authentification();
             string usernameAttempt, passwordAttempt;
             bool isLoginSuccessfull = false;
 
@@ -28,7 +28,7 @@ namespace Authentification
                 usernameAttempt = Console.ReadLine();
                 Console.WriteLine("Enter password");
                 passwordAttempt = Console.ReadLine();
-                isLoginSuccessfull = p.CheckUserCredentials(usernameAttempt, passwordAttempt);
+                isLoginSuccessfull = authentification.CheckUserCredentials(usernameAttempt, passwordAttempt);
                 if (isLoginSuccessfull)
                 {
                     Console.WriteLine("User credentials are correct");
