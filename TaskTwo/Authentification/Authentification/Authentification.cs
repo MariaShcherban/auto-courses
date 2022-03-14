@@ -31,11 +31,11 @@ namespace Authentification
                 isLoginSuccessfull = authentification.CheckUserCredentials(usernameAttempt, passwordAttempt);
                 if (isLoginSuccessfull)
                 {
-                    Console.WriteLine("User credentials are correct");
+                    Console.WriteLine("Welcome back, {0}", usernameAttempt);
                     break;
                 }
                 else
-                    Console.WriteLine("Username or password is incorrect. Please try again");
+                    Console.WriteLine("Username or password is incorrect");
                     
             }
             if (!isLoginSuccessfull)
