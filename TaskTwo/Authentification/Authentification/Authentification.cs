@@ -36,8 +36,8 @@ namespace Authentification
                 }
                 else
                     Console.WriteLine("Username or password is incorrect");
-                    
             }
+
             if (!isLoginSuccessfull)
             {
                 Console.WriteLine("User credentials are incorrect. Press any key to close the application");
