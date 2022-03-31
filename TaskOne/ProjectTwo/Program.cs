@@ -4,41 +4,29 @@ namespace ProjectOne
 {
     class Program
     {
+        public bool EnterDimension(out double dimension)
+        {
+            Console.WriteLine("Input dimension and press 'Enter'");
+            return double.TryParse(Console.ReadLine(), out dimension);
+        }
+
         static void Main(string[] args)
         {
             double a, b, c, diagonalLength;
+            Program program = new Program();
 
-            Console.WriteLine("Please enter 3 dimensions of a Parallelepiped one by one and press Enter after each dimension");
-            if (double.TryParse(Console.ReadLine(), out a))
+            if (program.EnterDimension(out a) && program.EnterDimension(out b) && program.EnterDimension(out c))
             {
-                if (double.TryParse(Console.ReadLine(), out b))
+                if (a > 0 && b > 0 && c > 0)
                 {
-                    if (double.TryParse(Console.ReadLine(), out c))
-                    {
-                        if (a > 0 && b > 0 && c > 0)
-                        { 
-                        diagonalLength = Math.Sqrt(Math.Pow(a, 2) + Math.Pow(b, 2) + Math.Pow(c, 2));
-                        Console.WriteLine($"Parallelepiped diagonal length is:  {diagonalLength}");
-                        }
-                        else
-                        {
-                            Console.WriteLine("All 3 dimensions must be > 0");
-                        }
-                    }
-                    else
-                    {
-                        Console.WriteLine($"The third dimension is not a number");
-                    }
+                    diagonalLength = Math.Sqrt(Math.Pow(a, 2) + Math.Pow(b, 2) + Math.Pow(c, 2));
+                    Console.WriteLine($"Parallelepiped diagonal length is:  {diagonalLength}");
                 }
                 else
-                {
-                    Console.WriteLine($"The second dimension is not a number");
-                }
+                    Console.WriteLine("All 3 dimensions must be > 0");
             }
             else
-            {
-                Console.WriteLine($"The first dimension is not a number");
-            }
+                Console.WriteLine("All dimensions must be numbers");
         }
     }
 }
