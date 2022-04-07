@@ -44,15 +44,20 @@ namespace Lesson5
             Console.WriteLine("Enter matrix dimensions");
             if (matrix.readDimension(out m) && matrix.readDimension(out n))
             {
-                int[,] array = matrix.GenerateMatrix(m, n);
-                Console.WriteLine("Matrix was generated");
-                matrix.PrintMatrix(array);
-                if (m == n)
+                if ((m > 0) && (n > 0))
                 {
-                    Console.WriteLine($"Matrix trace = {matrix.GetTraceOfSquareMatrix(array)}");
+                    int[,] array = matrix.GenerateMatrix(m, n);
+                    Console.WriteLine("Matrix was generated");
+                    matrix.PrintMatrix(array);
+                    if (m == n)
+                    {
+                        Console.WriteLine($"Matrix trace = {matrix.GetTraceOfSquareMatrix(array)}");
+                    }
+                    else
+                        Console.WriteLine("Matrix must be square to calculate trace");
                 }
                 else
-                    Console.WriteLine("Matrix must be square to calculate trace");
+                    Console.WriteLine("Matrix dimensions must be > 0");
             }
             else
                 Console.WriteLine("Matrix dimensions must be integer values");
