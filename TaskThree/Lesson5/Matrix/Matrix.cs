@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Lesson5
+namespace Matrix
 {
     public class Matrix
     {
@@ -8,9 +8,9 @@ namespace Lesson5
 
         public bool readDimension(out int number) => int.TryParse(Console.ReadLine(), out number);
 
-        public int[, ] GenerateMatrix(int m, int n)
+        public int[,] GenerateMatrix(int m, int n)
         {
-            int[, ] matrix = new int[m, n];
+            int[,] matrix = new int[m, n];
             Random rnd = new Random();
             for (int i = 0; i < m; i++)
                 for (int j = 0; j < n; j++)
@@ -18,7 +18,7 @@ namespace Lesson5
             return matrix;
         }
 
-        public void PrintMatrix(int[, ] matrix)
+        public void PrintMatrix(int[,] matrix)
         {
             for (int i = 0; i < matrix.GetLength(0); i++)
             {
@@ -28,7 +28,7 @@ namespace Lesson5
             }
         }
 
-        public int GetTraceOfSquareMatrix(int[, ] matrix)
+        public int GetTraceOfSquareMatrix(int[,] matrix)
         {
             int trace = 0;
             for (int i = 0; i < matrix.GetLength(0); i++)
